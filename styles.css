@@ -1,7 +1,14 @@
-body {
+body,
+html {
     margin: 0;
     padding: 0;
+    background-color: #fff;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Source Sans 3', sans-serif;
     
@@ -123,7 +130,7 @@ body {
     filter: blur(150px);
     position: absolute;
     top: 62px;
-    right: -205px;
+    right: -305px;
 }
 
 .circle-two {
