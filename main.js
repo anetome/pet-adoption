@@ -19,7 +19,9 @@ async function petsArea() {
     clone.querySelector('h3').textContent = pet.name
     clone.querySelector('.pet-description').textContent = pet.description
     clone.querySelector('.pet-age').textContent = createAgeText(pet.birthYear)                  
-    clone.querySelector('img').src = pet.photo
+    clone.querySelector('.pet-card-photo img').src = pet.photo
+    clone.querySelector('.pet-card-photo img').alt = `A ${pet.species} named ${pet.name}`
+
     wrapper.appendChild(clone)
   })
   document.querySelector(".list-of-pets").appendChild(wrapper)
@@ -32,11 +34,11 @@ function createAgeText(birthYear) {
   let age = thisYear - birthYear
   let ageText = ''
   if(age > 1) {
-    ageOutput = `${age} Years Old`
+    ageText = `${age} Years Old`
   } else if(age == 1) {
-    ageOutput = `${age} Year Old`
+    ageText = `${age} Year Old`
   } else {
-    ageOutput = `Less then a Year Old`
+    ageText = `Less then a Year Old`
   }
   return ageText
 
