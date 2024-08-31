@@ -10,6 +10,7 @@ async function start() {
 
 start()
 
+
 async function petsArea() {
   const petsPromise = await fetch("https://learnwebcode.github.io/bootcamp-pet-data/pets.json")
   const petsData = await petsPromise.json()
@@ -17,12 +18,33 @@ async function petsArea() {
     const clone = template.content.cloneNode(true)
     clone.querySelector('h3').textContent = pet.name
     clone.querySelector('.pet-description').textContent = pet.description
-    // let year = new Date().getFullYear()
+    clone.querySelector('.pet-age').textContent = createAgeText(pet.birthYear)                  
+    clone.querySelector('img').src = pet.photo
     wrapper.appendChild(clone)
   })
   document.querySelector(".list-of-pets").appendChild(wrapper)
 }
 
 petsArea()
+
+function createAgeText(birthYear) {
+  let thisYear = new Date().getFullYear()
+  let age = thisYear - birthYear
+  let ageText = ''
+  if(age > 1) {
+    ageOutput = `${age} Years Old`
+  } else if(age == 1) {
+    ageOutput = `${age} Year Old`
+  } else {
+    ageOutput = `Less then a Year Old`
+  }
+  return ageText
+
+}
+
+
+
+
+
 
 
