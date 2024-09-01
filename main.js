@@ -42,8 +42,21 @@ function createAgeText(birthYear) {
     ageText = `Less then a Year Old`
   }
   return ageText
-
 }
+
+// pet filter button code
+
+const filterButtons = document.querySelectorAll('.pet-filter button')
+filterButtons.forEach(button => {
+  button.addEventListener('click', handleButtonClick)
+})
+
+function handleButtonClick(e) {
+  filterButtons.forEach(btn => btn.classList.remove('active'))
+  e.target.classList.add('active')
+}
+
+
 
 
 
