@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .6rem 3rem;
+  background-color: #352a2a ;
+  color: #fff;
+}
+.hamburger {
+  display: none ;
+}
+.links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.links li a {
+  text-decoration: none;
+  color: rgb(244, 244, 187)
+}
+.logo {
+  color: #ff0 ;
+  border: 3px solid #ff0;
+  padding: 1rem;
+  border-radius: 50%;
+}
